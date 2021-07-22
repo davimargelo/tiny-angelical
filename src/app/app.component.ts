@@ -8,7 +8,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent implements OnInit {
   title = 'tiny-angelical';
-  images = ['\\assets\\img\\product_1.png', '\\assets\\img\\product_2.png', '\\assets\\img\\product_3.png'];
+  images = ['.\\assets\\img\\product_1.png', '.\\assets\\img\\product_2.png', '.\\assets\\img\\product_3.png'];
   options: string[] = ['Início', 'Categorias', 'Contato', 'Temas']
   paintSearchIcon: boolean = false;
 
