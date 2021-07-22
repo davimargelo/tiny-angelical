@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+
+// always include only once per project
+@include mat-core();
+
+$tiny-pink-palette: (
+  50: #F9A1A3,
+  100: #F9A1A3,
+  200: #F9A1A3,
+  300: #F9A1A3,
+  400: #F9A1A3,
+  500: #F9A1A3,
+  600: #F9A1A3,
+  700: #F9A1A3,
+  800: #F9A1A3,
+  900: #F9A1A3,
+  A100: #F9A1A3,
+  A200: #F9A1A3,
+  A400: #F9A1A3,
+  A700: #F9A1A3,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($tiny-pink-palette, 200, 400, A100);
+$my-theme-accent: mat-palette($mat-pink, 500, 900, A100);
+$my-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+.my-theme {
+    // use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

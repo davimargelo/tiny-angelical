@@ -1,3 +1,44 @@
-img {
+#logo {
     max-height: 165px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+body {
+    background-color: #F9A1A3;
+}
+
+.container {
+    padding: 10px 40px;
+    border: 1px solid #F9A1A3;
+}
+
+.carousel-container {
+    text-align: center;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    img {
+        height: 600px;
+        width: 100%;
+    }
+}
+
+.pink-bar {
+    height: 50px;
+    background-color: #F9A1A3;
+}
+
+.option {
+    font-weight: bolder;
+}
+
+.pink-color {
+    color: #F9A1A3;
+}
+
+.carousel-caption {
+    background-color: rgba($color: #000000, $alpha: 0.4);
 }

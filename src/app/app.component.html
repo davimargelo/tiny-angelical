@@ -1,17 +1,54 @@
-<body>
+<div class="container">
   <header>
-    <div fxLayout="row">
-      <div fxFlex id="search">
-        <mat-form-field floatLabel="never">
-          <input matInput placeholder="Search">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between end" fxLayoutGap="40px">
+      <div fxFlex="40" fxFlex.lt-md="100" id="search">
+        <mat-form-field>
+          <mat-icon [ngClass]="paintSearchIcon ? 'pink-color' : 'none-color'" matPrefix>search</mat-icon>
+          <input matInput type="search" placeholder="Buscar" class="search-input" (blur)="searchOnBlur()" (focus)="searchOnFocus()">
         </mat-form-field>
       </div>
-      <div fxFlex>
-        <img src="\assets\img\tinyangelicallogo.png" alt="">
+      <div fxFlex="60" fxFlex.lt-md="100">
+        <img id="logo" src="\assets\img\tinyangelicallogo.png" alt="">
       </div>
     </div>
+    <br>
+    <div class="pink-bar" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="40px">
+      <div class="option" *ngFor="let option of options">{{ option }}</div>
+    </div>
   </header>
-  <div>
 
+  <br>
+  <div class="carousel-container">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
   </div>
-</body>
+  <br>
+  <footer class="pink-bar">em desenvolvimento</footer>
+</div>
