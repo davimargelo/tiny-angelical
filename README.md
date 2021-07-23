@@ -16,7 +16,7 @@ Run `ng build --prod --base-href "https://davimargelo.github.io/tiny-angelical/"
 
 ## Deploy
 
-Run `npx angular-cli-ghpages -d dist/tiny-angelical`
+Run `npx angular-cli-ghpages -d dist/tiny-angelical` from GIT bash
 
 ## Running unit tests
 
