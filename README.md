@@ -12,8 +12,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-
 Run `ng build --prod --base-href "https://davimargelo.github.io/tiny-angelical/"` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Deploy
+
+Run `npx angular-cli-ghpages -d dist/tiny-angelical`
 
 ## Running unit tests
 
