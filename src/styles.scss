@@ -9,20 +9,20 @@
 @include mat-core();
 
 $tiny-pink-palette: (
-  50: #F9A1A3,
-  100: #F9A1A3,
-  200: #F9A1A3,
-  300: #F9A1A3,
-  400: #F9A1A3,
-  500: #F9A1A3,
-  600: #F9A1A3,
-  700: #F9A1A3,
-  800: #F9A1A3,
-  900: #F9A1A3,
-  A100: #F9A1A3,
-  A200: #F9A1A3,
-  A400: #F9A1A3,
-  A700: #F9A1A3,
+  50: #f9a1a3,
+  100: #f9a1a3,
+  200: #f9a1a3,
+  300: #f9a1a3,
+  400: #f9a1a3,
+  500: #f9a1a3,
+  600: #f9a1a3,
+  700: #f9a1a3,
+  800: #f9a1a3,
+  900: #f9a1a3,
+  A100: #f9a1a3,
+  A200: #f9a1a3,
+  A400: #f9a1a3,
+  A700: #f9a1a3,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
@@ -38,7 +38,7 @@ $tiny-pink-palette: (
     A200: $dark-primary-text,
     A400: $dark-primary-text,
     A700: $light-primary-text,
-  )
+  ),
 );
 
 // specify theme class eg: <body class="my-theme"> ... </body>
@@ -52,15 +52,23 @@ $my-theme-warn: mat-palette($mat-deep-orange, A200);
 $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 
 .my-theme {
-    // use our theme with angular-material-theme mixin
-    @include angular-material-theme($my-theme);
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($my-theme);
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgba($color: #f9a1a3, $alpha: 0.1);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #f9a1a3 !important;
+  height: 100px !important;
+  width: 50px !important;
 }
