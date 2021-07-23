@@ -30,11 +30,11 @@ export class AppComponent implements OnInit {
 
     this.matIconRegistry.addSvgIcon(
       `instagram`,
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/instagram-logo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/instagram-logo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       `twitter`,
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/twitter-logo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/twitter-logo.svg")
     );
   }
 
