@@ -1,10 +1,12 @@
 <div class="container">
   <header>
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between end" fxLayoutGap="40px">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between end"
+      fxLayoutAlign.lt-md="space-between center" fxLayoutGap="40px">
       <div fxFlex="40" fxFlex.lt-md="100" id="search">
         <mat-form-field>
           <mat-icon [ngClass]="paintSearchIcon ? 'pink-color' : 'none-color'" matPrefix>search</mat-icon>
-          <input matInput type="search" placeholder="Buscar" class="search-input" (blur)="searchOnBlur()" (focus)="searchOnFocus()">
+          <input matInput type="search" placeholder="Buscar" class="search-input" (blur)="searchOnBlur()"
+            (focus)="searchOnFocus()">
         </mat-form-field>
       </div>
       <div fxFlex="60" fxFlex.lt-md="100">
@@ -12,43 +14,37 @@
       </div>
     </div>
     <br>
-    <div class="pink-bar" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="40px">
-      <div class="option" *ngFor="let option of options">{{ option }}</div>
+    <div class="pink-bar" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center stretch"
+      fxLayoutAlign.lt-sm="none stretch" fxLayoutGap="0">
+      <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex="center" class="option"
+        *ngFor="let option of options" (click)="clickedOption(option)">
+        <span fxFlex="stretch">{{ option.title }}</span>
+      </div>
     </div>
   </header>
 
   <br>
   <div class="carousel-container">
     <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide>
+      <ng-template ngbSlide *ngFor="let image of images">
         <div class="picsum-img-wrapper">
-          <img [src]="images[0]" alt="Random first slide">
+          <img [src]="image.path" alt="Random first slide">
         </div>
         <div class="carousel-caption">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[1]" alt="Random second slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[2]" alt="Random third slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>{{ image.title }}</h3>
+          <p>{{ image.description }}</p>
         </div>
       </ng-template>
     </ngb-carousel>
   </div>
   <br>
-  <footer class="pink-bar">em desenvolvimento</footer>
+  <footer class="pink-bar" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="40px">
+    <div fxFlex="initial">
+      <img class="frete-img" [src]="freteImg" alt="">
+    </div>
+    <div fxLayout="row" fxLayoutGap="40px" fxFlex="nogrow">
+      <mat-icon fxFlex svgIcon="instagram"></mat-icon>
+      <mat-icon fxFlex svgIcon="twitter"></mat-icon>
+    </div>
+  </footer>
 </div>
