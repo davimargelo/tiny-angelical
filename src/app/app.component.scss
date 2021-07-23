@@ -9,7 +9,6 @@ mat-form-field {
 .my-container {
     padding: 10px 40px;
     // border: 1px solid #f9a1a3;
-    margin: 0 100px;
 }
 
 .carousel-container {
@@ -56,4 +55,10 @@ mat-form-field {
 footer {
     padding: 10px 40px;
     max-height: 100px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .my-container {
+        padding: 10px 0;
+    }
 }
