@@ -1,0 +1,21 @@
+<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+    <div *ngIf="product" fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="40px">
+        <div fxFlex="50%">
+            <img class="product-img" [src]="product.path" alt="">
+        </div>
+        <div fxFlex>
+            <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                <h4 fxFlex>{{product.title}}</h4>
+                <h5 fxFlex><strong>R$ {{product.price}}</strong></h5>
+                <span fxFlex="start" class="frete-gratis">Frete grátis</span>
+                <p fxFlex>{{product.description}}</p>
+                <mat-form-field fxFlex="none" appearance="fill">
+                    <mat-label>QUANTIDADE</mat-label>
+                    <input matInput type="number" [value]="1">
+                </mat-form-field>
+                <button fxFlex class="buy-button" mat-raised-button color="primary">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <mat-spinner class="spinner" *ngIf="product == undefined" [diameter]="50"></mat-spinner>
+</div>

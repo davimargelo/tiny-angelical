@@ -1,0 +1,18 @@
+<br>
+<div class="carousel-container">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <a [routerLink]="['product',image.id]">
+        <div class="picsum-img-wrapper">
+          <img [src]="image.path" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ image.title }}</h3>
+          <p>{{ image.description }}</p>
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+  <mat-spinner class="spinner" *ngIf="images.length <= 0" [diameter]="50"></mat-spinner>
+</div>
+<br>
