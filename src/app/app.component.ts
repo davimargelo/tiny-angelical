@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   freteImg = '.\\assets\\img\\fretegratis.png'
 
   logoImg = '.\\assets\\img\\tinyangelicallogo.png'
-  options: any[] = [{ title: 'Início', link: '/' }, { title: 'Categorias', link: null }, { title: 'Contato', link: 'contato' }, { title: 'Temas', link: 'temas' }]
+  options: any[] = [{ title: 'Início', link: '/' }, { title: 'Categorias', link: null }, { title: 'Contato', link: 'contato' }, { title: 'Parcerias', link: 'parcerias' }]
   paintSearchIcon: boolean = false;
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute) {
