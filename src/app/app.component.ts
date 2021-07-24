@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
       this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/instagram-logo.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      `twitter`,
-      this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/twitter-logo.svg")
+      `facebook`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/facebook-logo.svg")
     );
   }
 
